@@ -6,10 +6,10 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	// 账号域名：GitHub Pages 下所有站点的公共前缀
-	site: 'https://L1nG920.github.io',
-	// 项目站点部署在 /<仓库名>/ 下，本地预览会变成 http://localhost:4321/helpless-horizon/
-	base: '/helpless-horizon',
+	// 主站域名（yukimio.top 直接部署在根路径）
+	site: 'https://yukimio.top',
+	// 注意：不设置 base，主站按根路径部署。
+	// GitHub Pages 的项目站点在 /helpless-horizon/ 下，由 workflow 构建时用 --base 覆盖。
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{

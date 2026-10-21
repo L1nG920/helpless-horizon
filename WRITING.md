@@ -15,7 +15,7 @@
    npm run dev
    ```
 
-   打开 **http://localhost:4321/helpless-horizon/**（注意有 `/helpless-horizon/` 前缀）
+   打开 **http://localhost:4321/**（本地是根路径）
 
 5. 发布：
 
@@ -60,7 +60,7 @@ pubDate: '2026-10-21'
 
 ## 四、一个必须记住的坑
 
-站点部署在 **`/helpless-horizon/` 子路径**下，所以**任何内部链接都必须用 `withBase()`**：
+主站 `https://yukimio.top` 按根路径部署；GitHub Pages 的备份站点在 `/helpless-horizon/` 子路径下（由 workflow 构建时传 `--base` 覆盖）。所以**任何内部链接都必须用 `withBase()`**，这样两种部署都正确：
 
 ```astro
 ---
