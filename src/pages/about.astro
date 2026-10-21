@@ -1,0 +1,35 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_AUTHOR, GITHUB_URL } from '../consts';
+import BaseHead from '../components/BaseHead.astro';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<BaseHead title={`关于 | ${SITE_AUTHOR}`} description="关于我，以及这个博客" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>关于</h1>
+			<p>
+				我是 {SITE_AUTHOR}，这里是我的个人博客。
+			</p>
+			<p>
+				写博客最直接的好处，是逼自己把「好像懂了」变成「真的懂了」。一个概念只有在你能用自己的话讲清楚时，才算真的掌握。
+			</p>
+			<p>
+				这里大概会写三件事：我实际做过并且踩过坑的技术问题；读过的书和文章里让我改变想法的部分；一些还没想明白、但值得记下来的问题。
+			</p>
+			<p>
+				不保证有用，但保证是真的。
+			</p>
+			<p>
+				<a href={GITHUB_URL} target="_blank" rel="noopener">GitHub</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>

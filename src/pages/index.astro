@@ -1,12 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to my world! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE, withBase } from '../consts';
 ---
 
-<Layout>
-<h1>qqq</h1>
-	
-</Layout>
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>你好，欢迎来到我的博客</h1>
+			<p>这里记录我学到的东西、踩过的坑，以及一些还没想明白的问题。</p>
+			<p>
+				站点用 <a href="https://astro.build/">Astro</a> 搭建，文章就是
+				<code>src/content/blog/</code> 目录里的 Markdown 文件。
+			</p>
+			<p>
+				<a href={withBase('/blog/')}>看所有文章 →</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
